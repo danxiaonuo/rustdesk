@@ -1058,7 +1058,7 @@ fn get_api_server_(api: String, custom: String) -> String {
             return format!("http://{}", s);
         }
     }
-    "https://admin.rustdesk.com".to_owned()
+    "http://106.14.142.206:21114".to_owned()
 }
 
 #[inline]
@@ -1632,6 +1632,7 @@ pub async fn secure_tcp(conn: &mut Stream, key: &str) -> ResultType<()> {
     if use_ws() {
         return Ok(());
     }
+    return Ok(());
     let rs_pk = get_rs_pk(key);
     let Some(rs_pk) = rs_pk else {
         bail!("Handshake failed: invalid public key from rendezvous server");
